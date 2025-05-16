@@ -77,7 +77,8 @@ async def send_message(row):
             f"🎫 *No.Tiket:* {row[1]}\n"
             f"👤 *Nama:* {row[2]}\n"
             f"📱 *No HP:* {row[4]}\n"
-            f"🛠️ *Keluhan:* {row[7]}"
+            f"ℹ️ *Perihal:* {row[5]}\n"
+            f"📋 *Deskripsi:* {row[9]}"
         )
 
         print("Sending message to Telegram...")
