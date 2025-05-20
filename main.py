@@ -73,14 +73,12 @@ async def send_message(row):
             print(f"Skipping row, not enough columns: {row}")
             return
 
-        deskripsi = row[9].strip() if len(row) > 9 and row[9] and row[9].strip() else (row[7] if len(row) > 7 else "Tidak ada deskripsi")
-
         pesan = (
             f"🎫 *No.Tiket:* {row[1]}\n"
             f"👤 *Nama:* {row[2]}\n"
             f"📱 *No HP:* {row[4]}\n"
             f"ℹ️ *Perihal:* {row[5]}\n"
-            f"📋 *Deskripsi:* {deskripsi}"
+            f"📋 *Deskripsi:* {row[9] if row[9] else row[7]}"
         )
 
         print("Sending message to Telegram...")
